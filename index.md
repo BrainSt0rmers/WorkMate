@@ -1,4 +1,4 @@
-## WorkMate 
+
 
 WorkMate is an Android app that helps students ease their stressful lives by aiding them to track their college attendance, notify them when a class starts (according to the timetable), view the floor plan of the college to know the directions and have a QA forum of the college so students can clarify any doubts they have. 
 
