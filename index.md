@@ -12,10 +12,11 @@ WorkMate is a Mobile Application that help students ease their stressful lives b
 
 * Finally, the app also provides the service of having a college discussion forum for students so that they can easily clear any doubts they have in mind. The forum moderators can be the admins of the app. The forum will enable easy access of any knowledge and procedures related to the functioning and events of the college. This feature can be especially useful for the first years.
 
-  Team members -  Anjali Manoj (18306),
-                  Gopika H (18318),
-                  Sarath Mohan (18349),
-                  A J Parvathi (18510)
+  Team members - 
+  Anjali Manoj (18306)
+  Gopika H (18318)
+  Sarath Mohan (18349)
+  A J Parvathi (18510)
 
 
                                                                                                                
