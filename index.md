@@ -1,6 +1,6 @@
 
 
-WorkMate is a Mobile Application that helps students ease their stressful lives by aiding them in tracking their college attendance, notify them when a class starts (according to the timetable), view the floor plan of the college to know the directions and have a Q/A forum of the college to help students clarify any doubts they have. 
+WorkMate is a Mobile Application that help students ease their stressful lives by aiding them in tracking their college attendance, notify them when a class starts (according to the timetable), view the floor plan of the college to know the directions and have a Q/A forum of the college to help students clarify any doubts they have. 
 
 * The first highlight of the project is that it automizes attendance tracking, that is, students need not manually keep updating their attendance for every class they attend. On attending the first class of a subject the student can set the coordinates of their classroom. Thus, for all the classes of that subject to come, the app will compare the current coordinates of the student and if the the student's coordinates is in the vincinity of the classroom's coordinates, the app will mark the attendance of the student as "Present". Otherwise it will mark the attendance as "Absent".
 
