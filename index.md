@@ -15,7 +15,7 @@ WorkMate is a Mobile Application that help students ease their stressful lives b
 
                                                                                                                
                                                                                                                
-                                                                                                               Team members -  Anjali Manoj (18306)
-                                                                                                                               Gopika Harikumar (18319)
-                                                                                                                               Sarath Mohan (18349)
-                                                                                                                               A J Parvati (18510)
+                                                                                              Team members -  Anjali Manoj (18306)
+                                                                                                              Gopika Harikumar (18319)
+                                                                                                              Sarath Mohan (18349)
+                                                                                                              A J Parvati (18510)
