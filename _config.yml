@@ -1,5 +1,6 @@
 theme: jekyll-theme-slate
 title: WorkMate
 description: Team BrainStormers
+author: Parvathi
 authors:
-    name: A J Parvathi
+    output: True
