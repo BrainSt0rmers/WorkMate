@@ -4,7 +4,7 @@ WorkMate is an Android app that helps students ease their stressful lives by aid
 
 * The first highlight of the project is that it automizes attendance tracking, that is, students need not manually keep updating their attendance for every class they attend. On attending the first class of a subject the student can set the coordinates of their classroom. Thus, for all the classes of that subject to come, the app will compare the current coordinates of the student and if the the student's coordinates is in the vincinity of the classroom's coordinates, the app will mark the attendance of the student as "Present". Otherwise it will mark the attendance as "Absent".
 
-  All the same, there will be 3 levels of notifications - Red in case of less than 60%, Orange if less than 75% and Green if 90 or more.
+  All the same, there will be 3 levels of notifications - Red in case of less than 60%, Orange if less than 75% and Green if 90% or more.
 
 * An alert is sent to each user approximately 5 min before class starts (Yellow). Incase the student doesnt dismiss the notification, it is assumed that the student hasnt reached the class yet and hence, another alert is sent 5 min after the amendment of the class (Red) - notifying him/her that the class has started.
 
