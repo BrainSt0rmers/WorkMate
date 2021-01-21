@@ -6,4 +6,4 @@ WorkMate is an Android app that helps students ease their stressful lives by aid
 
   All the same, there will be 3 levels of notifications - Red in case of less than 60%, Orange if less than 75% and Green if 90 or more.
 
-* If a student has been noted as not in the classroom at the time of the period by the app, a notification is sent to the student notifying him/her that the class has started. If the attendance of a student goes below 75%, a warning is provided to them. 
+* An alert is sent to each user approximately 5 min before class starts (Yellow). Incase the student doesnt dismiss the notification, it is assumed that the student hasnt reached the class yet and hence, another alert is sent 5 min after the amendment of the class (Red) - notifying him/her that the class has started.
