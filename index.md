@@ -7,3 +7,7 @@ WorkMate is an Android app that helps students ease their stressful lives by aid
   All the same, there will be 3 levels of notifications - Red in case of less than 60%, Orange if less than 75% and Green if 90 or more.
 
 * An alert is sent to each user approximately 5 min before class starts (Yellow). Incase the student doesnt dismiss the notification, it is assumed that the student hasnt reached the class yet and hence, another alert is sent 5 min after the amendment of the class (Red) - notifying him/her that the class has started.
+
+* The third feature of the app is that it provides students with the map infrastructure of their college so that they can easily navigate within the college premises by easily opening their app.
+
+* Finally, the app also provides the service of having a college forum for students so that they can clear any doubts that they have easily. The forum moderators can be the admins of the app. The forum will help enable easy access of any knowledge and procedures related to the functioning and events of the college. This feature can be especially useful for the first years.
