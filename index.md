@@ -1,5 +1,4 @@
-Team BRAINSTOMERS!
-_____________________________________________________________________________________________________________________________________________________________
+
 
 WorkMate is a Mobile Application that helps students ease their stressful lives by aiding them in tracking their college attendance, notify them when a class starts (according to the timetable), view the floor plan of the college to know the directions and have a Q/A forum of the college to help students clarify any doubts they have. 
 
