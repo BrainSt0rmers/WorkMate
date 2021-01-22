@@ -12,7 +12,7 @@ WorkMate! is a Mobile Application that is targeted for the students of Amrita Sc
 
 * Finally, the app also provides the service of having a college discussion forum for students so that they can easily clear any doubts they have in mind. The forum moderators can be the admins of the app. The forum will enable easy access of any knowledge and procedures related to the functioning and events of the college. This feature can be especially useful for the first years.
 
-All the current attendance tracking apps require students to manually update their attendance for every class they attend everyday. This can be a tedious process. In the same manner, for students who are new to the college and even for the senior students, locating places in the college premises where the campus is so huge can be a difficult task. Students also come across several questions and issues that can be easily cleared among the students itself with the existence of a forum exclusive to the college students. All these issues can be solved with the introduction of our app.
+All the current attendance tracking apps require students to manually update their attendance for every class they attend each day. This can be a tedious process. In the same manner, for students who are new to the college and even for the senior students, locating places within the college premises where the campus is huge can be a difficult task. Students also come across several questions and issues that can easily be cleared among the students itself with the existence of a forum exclusive to the college students. All these issues can be solved with the introduction of our app.
 
   Team members - Anjali Manoj (18306), Gopika H (18318), Sarath Mohan (18349), A J Parvathi (18510)
 
