@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "119234375342",
+    "project_id": "workmate-cd4b7",
+    "storage_bucket": "workmate-cd4b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119234375342:android:01d6f39ef3615e3507c73f",
+        "android_client_info": {
+          "package_name": "com.brainstormers.work_mate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119234375342-0lm8vm2tiedc8einglmbf57jbh90crob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrfpeMgoob8rw1MIwSFPDUfofvI30-bRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119234375342-0lm8vm2tiedc8einglmbf57jbh90crob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
