@@ -10,22 +10,26 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  //final databaseReference = FirebaseDatabase.instance.reference();
-  // void CreateData() {
-  //   databaseReference
-  //       .child("flutterDevsTeam1")
-  //       .set({'name': 'Deepak Nishad', 'description': 'Team Lead'});
-  // }
+  String email;
+  String password;
+  String username;
+  String a = "amvo1taaum@gmailcom";
 
-  String _email;
-  String _password;
+  final databaseReference = FirebaseDatabase.instance.reference();
+  void CreateData() {
+    //databaseReference.set({_email});
+    String em = email.replaceAll('.', ',');
+    databaseReference.child("user/$em").set({'username': username});
+    //databaseReference.child("username").set({'random: 1234'});
+    //print(databaseReference.key);
+  }
 
   Future<void> _createUser() async {
     try {
       UserCredential userCredential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: _email,
-        password: _password,
+        email: email,
+        password: password,
       );
     } on FirebaseAuthException catch (e) {
       print("Error: $e");
@@ -33,6 +37,7 @@ class _SignUpState extends State<SignUp> {
       print("Error: $e");
     }
     //return LoginPage();
+    CreateData();
     Navigator.pop(context);
   }
 
@@ -41,7 +46,7 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Sign-Up Page"),
-        backgroundColor: Colors.blue,
+        //backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -49,13 +54,16 @@ class _SignUpState extends State<SignUp> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
+              onChanged: (value) {
+                username = value;
+              },
               decoration: InputDecoration(
                 hintText: "Enter Roll Number...",
               ),
             ),
             TextField(
               onChanged: (value) {
-                _email = value;
+                email = value;
               },
               decoration: InputDecoration(
                 hintText: "Enter E-mail Id...",
@@ -63,7 +71,7 @@ class _SignUpState extends State<SignUp> {
             ),
             TextField(
               onChanged: (value) {
-                _password = value;
+                password = value;
               },
               decoration: InputDecoration(
                 hintText: "Enter Password...",

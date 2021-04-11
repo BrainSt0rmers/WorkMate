@@ -5,7 +5,7 @@ import 'package:work_mate/Screens/loginpage.dart';
 import 'package:work_mate/Screens/signuppage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+void main() async {
   runApp(MyApp());
 }
 
@@ -14,15 +14,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
-        primaryColor: Colors.blue,
-        //accentColor: Colors.white,
+        primaryColor: Colors.cyan,
+        accentColor: Colors.cyan,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            //onPrimary: Colors.black,
-            primary: Colors.blue,
+            onPrimary: Colors.black,
+            primary: Colors.cyan,
           ),
         ),
-        primaryTextTheme: Typography.whiteCupertino,
+        primaryTextTheme: Typography.blackCupertino,
       ),
       home: LandingPage(),
     );

@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        //backgroundColor: Colors.blue,
         title: Text("Login"),
       ),
       body: Padding(
