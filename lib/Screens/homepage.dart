@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
             child: Text("Sign Out"),
           ),
         ],
-        backgroundColor: Colors.blue,
+        //backgroundColor: Colors.blue,
         title: Text("Homepage"),
       ),
       body: Center(
@@ -43,11 +43,11 @@ class _HomePageState extends State<HomePage> {
               ),
               TextField(
                 decoration:
-                InputDecoration(hintText: "Join Class as Student..."),
+                    InputDecoration(hintText: "Join Class as Student..."),
               ),
               TextField(
                 decoration:
-                InputDecoration(hintText: "Join Class as Faculty..."),
+                    InputDecoration(hintText: "Join Class as Faculty..."),
               ),
             ],
           ),
