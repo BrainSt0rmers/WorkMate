@@ -1,16 +1,16 @@
-# work_mate
+# WorkMate!
 
-Software Engineering Project
+## Software Engineering Project
 
-## Getting Started
+This is a Flutter application for mobile platforms. 
+The target users are the students and faculties of Amrita School of Engineering, Amritapuri.
 
-This project is a starting point for a Flutter application.
+The app has two main features, namely attendance management and calendar dashboard.
+The app provides the following benifits to the users (faculties and students):
+* Faculties get to know work allotted to the students and assign accordingly.
+* Faculties can easily manage attendance without holding book registers or laptop.
+* Students can know their attendance constantly.
+* Students can view their allotted work on the calendar.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Check out our blog for more details :
+Link - https://workmate-brainstormers.blogspot.com/2021/02/se-project-plan-version-3.html
