@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:work_mate/Screens/createclassroompage.dart';
 import 'package:work_mate/Screens/homepage.dart';
 import 'package:work_mate/Screens/loginpage.dart';
 import 'package:work_mate/Screens/signuppage.dart';
+import 'package:work_mate/Screens/classroompage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
@@ -24,6 +26,14 @@ class MyApp extends StatelessWidget {
         ),
         primaryTextTheme: Typography.blackCupertino,
       ),
+      routes: <String, WidgetBuilder>{
+        '/landingpage': (BuildContext context) => new LandingPage(),
+        '/loginpage': (BuildContext context) => new LoginPage(),
+        '/signuppage': (BuildContext context) => new SignUp(),
+        '/homepage': (BuildContext context) => new HomePage(),
+        '/createclassroompage': (BuildContext context) => new CreateClassRoom(),
+        '/classroompage': (BuildContext context) => new ClassRoom(),
+      },
       home: LandingPage(),
     );
   }
