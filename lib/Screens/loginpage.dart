@@ -55,9 +55,14 @@ class _LoginPageState extends State<LoginPage> {
                 hintText: 'Enter Password...',
               ),
             ),
-            ElevatedButton(
-              onPressed: _login,
-              child: Text('Login'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: _login,
+                  child: Text('Login'),
+                ),
+              ],
             ),
             Spacer(),
             ElevatedButton(
