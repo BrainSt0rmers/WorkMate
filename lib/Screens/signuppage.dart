@@ -10,18 +10,17 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  String stname;
   String email;
   String password;
   String username;
-  String a = "amvo1taaum@gmailcom";
 
-  final databaseReference = FirebaseDatabase.instance.reference();
+  final _databaseReference = FirebaseDatabase.instance.reference();
   void CreateData() {
-    //databaseReference.set({_email});
     String em = email.replaceAll('.', ',');
-    databaseReference.child("user/$em").set({'username': username});
-    //databaseReference.child("username").set({'random: 1234'});
-    //print(databaseReference.key);
+    _databaseReference
+        .child("user/$em")
+        .set({'username': username, 'designation': "student", 'name': stname});
   }
 
   Future<void> _createUser() async {
@@ -55,11 +54,16 @@ class _SignUpState extends State<SignUp> {
           children: [
             TextField(
               onChanged: (value) {
+                stname = value;
+              },
+              decoration: InputDecoration(hintText: "Enter Name..."),
+            ),
+            TextField(
+              textCapitalization: TextCapitalization.characters,
+              onChanged: (value) {
                 username = value;
               },
-              decoration: InputDecoration(
-                hintText: "Enter Roll Number...",
-              ),
+              decoration: InputDecoration(hintText: "Enter Roll Number..."),
             ),
             TextField(
               onChanged: (value) {
@@ -70,6 +74,7 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             TextField(
+              obscureText: true,
               onChanged: (value) {
                 password = value;
               },
