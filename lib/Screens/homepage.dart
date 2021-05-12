@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'createclassroompage.dart';
-import 'package:work_mate/main.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:work_mate/Screens/classroompage.dart';
+import 'package:work_mate/Screens/joinclasspage.dart';
+import 'package:work_mate/Screens/facultyhomepage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,100 +12,47 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _dbref = FirebaseDatabase.instance.reference().child("class");
-  String _clcode;
-  String _enteredcode;
-  List<String> classlist = [];
-
-  Future<bool> CheckCode(String s) async {
-    int _flg = 0;
+  Future<String> getValue() async {
+    String s;
+    String curmail = await FirebaseAuth.instance.currentUser.email;
+    curmail = curmail.replaceAll('.', ',');
+    final _dbref = FirebaseDatabase.instance
+        .reference()
+        .child("user/$curmail/designation");
     await _dbref.once().then((DataSnapshot snapshot) {
       Map<dynamic, dynamic> values = snapshot.value;
-      values.forEach((key, values) {
-        if (key == s) {
-          _flg = 1;
-        }
-      });
+      //print(values['code']);
+      if (values['code'] == 'null' && values['post'] == 'student') {
+        s = "studentwithoutclass";
+      } else if (values['code'] != 'null' &&
+          (values['post'] == 'student' || values['post'] == 'cr')) {
+        s = "studentwithclass";
+      } else if (values['code'] == 'null' && values['post'] == 'faculty') {
+        s = "faculty";
+      }
     });
-    //print(_flg);
-    if (_flg == 1)
-      return true;
-    else
-      return false;
+    return s;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          MaterialButton(
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-            },
-            child: Text(
-              "Sign Out",
-              style: TextStyle(color: Colors.black),
+    return FutureBuilder(
+        future: getValue(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.data == 'studentwithoutclass') {
+              return JoinClass();
+            } else if (snapshot.data == 'studentwithclass') {
+              return ClassRoom();
+            } else if (snapshot.data == 'faculty') {
+              return FacultyHome();
+            }
+          }
+          return Scaffold(
+            body: Center(
+              child: Text("Entering the class..."),
             ),
-          ),
-        ],
-        //backgroundColor: Colors.blue,
-        title: Text("Homepage"),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/createclassroompage');
-                      },
-                      child: Text("Create a New Class"),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      onChanged: (value) {
-                        _enteredcode = value;
-                      },
-                      decoration:
-                      InputDecoration(hintText: "Join Class as Student..."),
-                    ),
-                  ),
-                  ElevatedButton(
-                      onPressed: () async {
-                        bool found =
-                        await Future.value(CheckCode(_enteredcode));
-                        if (found == true) {
-                          Navigator.of(context).pushNamed('/classroompage');
-                        } else {
-                          print("Class Does Not Exist");
-                        }
-                      },
-                      child: Text("Enter"))
-                ],
-              ),
-              // TextField(
-              //   decoration:
-              //       InputDecoration(hintText: "Join Class as Faculty..."),
-              // ),
-            ],
-          ),
-        ),
-      ),
-    );
+          );
+        });
   }
 }
