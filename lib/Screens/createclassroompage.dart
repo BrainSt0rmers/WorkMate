@@ -15,21 +15,25 @@ class _CreateClassRoomState extends State<CreateClassRoom> {
   String curracmail;
   String clcode;
   String clname;
+  String name;
+  String rno;
 
   String _chars =
       "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890";
   Random _rnd = Random();
 
-  Future<String> getMailID() async {
-    String x;
-    String user = await FirebaseAuth.instance.currentUser.email;
-    return user;
-  }
+  Future<void> getMailID() async {
+    curracmail = await FirebaseAuth.instance.currentUser.email;
+    curracmail = curracmail.replaceAll('.', ',');
 
-  void curMail() {
-    getMailID().then((value) {
-      curracmail = value;
-      curracmail = curracmail.replaceAll('.', ',');
+    await FirebaseDatabase.instance
+        .reference()
+        .child('user/$curracmail')
+        .once()
+        .then((DataSnapshot snap) {
+      Map<dynamic, dynamic> val = snap.value;
+      name = val['name'];
+      rno = val['rollno'];
     });
   }
 
@@ -42,13 +46,16 @@ class _CreateClassRoomState extends State<CreateClassRoom> {
       appBar: AppBar(
         title: Text("Create Classroom"),
         actions: [
-          MaterialButton(
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-            },
-            child: Text(
-              "Sign Out",
-              style: TextStyle(color: Colors.black),
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: TextButton(
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+              },
+              child: Text(
+                "Sign Out",
+                //style: TextStyle(color: Colors.black),
+              ),
             ),
           ),
         ],
@@ -68,17 +75,21 @@ class _CreateClassRoomState extends State<CreateClassRoom> {
               ),
               ElevatedButton(
                 onPressed: () async {
-                  await curMail();
+                  await getMailID();
                   clcode = getRandomString(8);
+                  _databaseReference.child("class/$clcode").set({
+                    "classname": clname,
+                    "studlist": {
+                      curracmail: {'name': name, 'rollno': rno}
+                    }
+                  });
+                  _databaseReference.child("user/$curracmail").update({
+                    'ccode': {clcode: '-'}
+                  });
                   _databaseReference
-                      .child("class/$clcode")
-                      .set({"classname": clname});
-                  _databaseReference
-                      .child("user/$curracmail/classcode")
-                      .set({"code": clcode});
-                  _databaseReference
-                      .child('user/$curracmail')
-                      .update({'designation': 'cr'});
+                      .child('user/$curracmail/designation')
+                      .update({'code': '$clcode', 'post': 'cr'});
+
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => ClassRoom()));
                 },
