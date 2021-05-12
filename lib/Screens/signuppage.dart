@@ -18,9 +18,12 @@ class _SignUpState extends State<SignUp> {
   final _databaseReference = FirebaseDatabase.instance.reference();
   void CreateData() {
     String em = email.replaceAll('.', ',');
-    _databaseReference
-        .child("user/$em")
-        .set({'username': username, 'designation': "student", 'name': stname});
+    _databaseReference.child("user/$em").set({
+      'rollno': username,
+      'designation': {'code': 'null', 'post': 'student'},
+      'name': stname,
+      'ccode': {'null': '-'}
+    });
   }
 
   Future<void> _createUser() async {
@@ -32,10 +35,11 @@ class _SignUpState extends State<SignUp> {
       );
     } on FirebaseAuthException catch (e) {
       print("Error: $e");
+      return;
     } catch (e) {
       print("Error: $e");
+      return;
     }
-    //return LoginPage();
     CreateData();
     Navigator.pop(context);
   }
